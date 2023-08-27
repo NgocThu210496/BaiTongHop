@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/categoriesManagement.css">
+    <title>Categories Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="catalogInfo" class="w-25" onsubmit="getDataCatalog(event)">
+            <label for="catalogId" class="form-label">Catalog ID</label>
+            <input type="text" name="catalogId" id="catalogId" class="form-control" /><br>
+            <label for="catalogName" class="form-label">Catalog Name</label>
+            <input type="text" name="catalogName" id="catalogName" class="form-control" /><br>
+            <label for="priority" class="form-label">Priority</label>
+            <input type="number" name="priority" id="priority" class="form-control" /><br>
+            <label for="description" class="form-label">Description</label>
+            <input type="text" name="description" id="description" class="form-control" /><br>
+            <label for="active" class="form-label" style="margin-right:20px;">Status</label>
+            
+            <input type="radio" name="status" id="active" checked value="true" class="form-check-input" style="margin-right: 10px;"/><label for="active"class="form-check-label">Active</label>
+            <input type="radio" name="status" id="inActive" value="false" class="form-check-input"style="margin-right: 10px;"/><label for="inActive"class="form-check-label">InActive</label><br>
+            <div class="d-grid gap-2 d-md-block" style="margin-bottom: 20px;">
+                <button id="btnSubmit" class="btn btn-primary" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <form action="" id="control" >
+       
+        <label for="catalogNameSearch">Catalog Name</label>
+        <input type="text" name="catalogNameSearch" id="catalogNameSearch"class="form-control w-25 d-inline" />
+        <button id="btnSearch"  class="btn btn-primary">Search</button>
+        <label for="sortCatalog">Sort</label>
+        <select name="sortCatalog" id="sortCatalog" class="form-select d-inline" style="width: 200px;">
+            <option value="">--Select Sort--</option>
+            <option value="catalogName-ASC">Catalog Name ASC</option>
+            <option value="catalogName-DESC">Catalog Name DESC</option>
+            <option value="priority-ASC">Priority ASC</option>
+            <option value="priority-DESC">Priority DESC</option>
+        </select>
+
+    </form>
+    <hr>
+    <!-- phần hiển thị data -->
+    <table border="1"class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Catalog Id</th>
+                <th>Catalog Name</th>
+                <th>Priority</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="listCatalog"class="table-group-divider">
+
+        </tbody>
+    </table>
+
+    <a href="#" id="preview">Preview</a>
+    <ul id="listPage">
+    </ul>
+    <a href="#" id="next">Next</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="./js/categoriesManagement.js"></script>
+</body>
+
+</html>
